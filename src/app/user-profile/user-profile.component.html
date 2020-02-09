@@ -1,0 +1,42 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>
+    User Name:
+    <input type="text" formControlName="userName" />
+    <div
+      *ngIf="
+        !this.loginForm.controls.username.valid &&
+        this.loginForm.controls.username.touched
+      "
+      style="color: red"
+    >
+      User Name Required !
+    </div>
+  </label>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label>
+    Password:
+    <input type="text" formControlName="password" />
+    <div
+      *ngIf="
+        !this.loginForm.controls.password.valid &&
+        this.loginForm.controls.password.touched
+      "
+      style="color: red"
+    >
+      Password Required !
+    </div>
+  </label>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+
+<br />
+
+<p>Current User: {{ name.value }}</p>
+
+<p>Current Password: {{ password.value }}</p>

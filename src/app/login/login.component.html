@@ -1,3 +1,7 @@
+<h2 align="center">Sign In, Please.</h2>
+
+<br><br><br>
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <label>
     User Name:
@@ -25,7 +29,7 @@
 <p>Form Status: {{ loginForm.status }}</p>
 
 <nav>
-  <button (click)="navigate()">New Users should Sgin Up first!</button>
+  <a routerLink="/register">
+    New Users need to Sign Up!
+  </a>
 </nav>
-<!-- <router-outlet></router-outlet>
- -->

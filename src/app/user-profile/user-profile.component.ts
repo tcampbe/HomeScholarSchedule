@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-user-profile",
@@ -8,20 +9,33 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class UserProfileComponent implements OnInit {
 
-  profileForm = new FormGroup({
+  profileForm: FormGroup;
 
-    name: new FormControl(""),
+  constructor(private fb: FormBuilder, private router: Router) {}
 
-    password: new FormControl("")
+  ngOnInit() {
+    this.profileForm = this.fb.group({
 
-  });
+      userName: ["", Validators.required],
 
-  constructor() {}
+      password: ["", Validators.required]
 
-  ngOnInit() {}
+    });
+    
+  }
 
   onSubmit() {
+    // stop here if form is invalid
+    if (this.profileForm.invalid) {
+      return;
+    }
+
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
   }
+
+  navigate(): void {
+    this.router.navigate(["/register"]);
+  }
 }
+

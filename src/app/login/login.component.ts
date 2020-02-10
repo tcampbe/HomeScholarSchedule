@@ -8,20 +8,28 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  profileForm = this.fb.group({
-
-    userName: ["", Validators.required],
-
-    password: ["", Validators.required]
-
-  });
+  loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+
+      userName: ["", Validators.required],
+  
+      password: ["", Validators.required]
+  
+    });
+  }
 
   onSubmit() {
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
+  }
+
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    console.warn(this.loginForm.value);
   }
 }

@@ -1,35 +1,43 @@
-<h2 align="center">New User Sign UP, Please.</h2>
+<h2 align="center">Register Here</h2>
 
-<br><br><br>
+<br /><br /><br />
 
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form align="center" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <label>
     User Name:
     <input type="text" formControlName="userName" required />
   </label>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br /><br /><br />
 
   <label>
     Password:
     <input type="text" formControlName="password" required />
   </label>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <br /><br /><br />
 
-  <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+  <button
+    type="submit"
+    [disabled]="!registerForm.valid"
+    routerLink="/userProfile"
+  >
+    Submit
+  </button>
 </form>
 
-<br />
+<br /><br /><br />
 
-<p>Current Form Values:</p>
-<p>{{ registerForm.value.userName }}</p>
-<p>{{ registerForm.value.password }}</p>
+<div align="center">
+  
+  <p>Current Form Values:</p>
+  <p>{{ registerForm.value.userName }}</p>
+  <p>{{ registerForm.value.password }}</p>
 
-<p>Form Status: {{ registerForm.status }}</p>
+  <p>Form Status: {{ registerForm.status }}</p>
 
-<nav>
-  <a routerLink="/userProfile">
-    New Users need to Sign Up!
-  </a>
-</nav>
+  <nav>
+    <a routerLink="/userProfile">?</a>
+  </nav>
+
+</div>

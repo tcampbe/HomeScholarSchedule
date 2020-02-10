@@ -8,13 +8,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserService } from "./services/user.service";
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DefaultComponent
   ],
 
   imports: [

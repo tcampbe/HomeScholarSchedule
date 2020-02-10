@@ -1,18 +1,60 @@
-<h2 align="center">Sign In, Please.</h2>
+<h2 align="center">User Profile</h2>
 
 <br><br><br>
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <label>
-    User Name:
-    <input type="text" formControlName="userName" required />
+    First Name:
+    <input type="text" formControlName="firstName" required />
   </label>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <label>
-    Password:
-    <input type="text" formControlName="password" required />
+    Last Name:
+    <input type="text" formControlName="lastName" required />
+  </label>
+
+  <br><br><br>
+
+  <label>
+    Date of Birth:
+    <input type="text" formControlName="dob" required />
+  </label>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label>
+    Hobbies:
+    <input type="text" formControlName="hobbies" />
+  </label>
+
+  <br><br><br>
+
+  <label>
+    Home Address:
+    <input type="text" formControlName="homeAddress" required />
+  </label>
+
+  <br><br><br>
+
+  <label>
+    Favorite Food:
+    <input type="text" formControlName="favoriteFood" />
+  </label>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label>
+    Favorite Movie:
+    <input type="text" formControlName="favoriteMovie" />
+  </label>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label>
+    Favorite Artist:
+    <input type="text" formControlName="favoriteArtist" />
   </label>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,13 +65,13 @@
 <br />
 
 <p>Current Form Values:</p>
-<p>{{ profileForm.value.userName }}</p>
-<p>{{ profileForm.value.password }}</p>
+<p>{{ profileForm.value.lastName }}</p>
+<p>{{ profileForm.value.dob }}</p>
 
 <p>Form Status: {{ profileForm.status }}</p>
 
 <nav>
   <a routerLink="/**">
-    New Users need to Sign Up!
+    Cancel
   </a>
 </nav>
